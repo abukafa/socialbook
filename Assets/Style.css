@@ -234,24 +234,11 @@ aside .menu-item:nth-last-child(2){
 
 
 /* ............Start Notifaction Box........... */
-.notification-box{
-    width: 30rem;
-    left: 110%;
-    position: absolute;
-    top: 0;
-    background: var(--color-white);
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
-    box-shadow: var(--color-primary) 0 0 .4rem;
-    z-index: 8;
-    display: none; 
-}
 .notification-box::before{
     content: '';
     width: 1.2rem;
     height: 1.2rem;
     background: var(--color-white);
-    position: absolute;
     left: -.6rem;
     transform: rotate(45deg);
 }
@@ -376,6 +363,11 @@ aside .menu-item:nth-last-child(2){
 }
 .main-middle .add-post .profile-picture{
     width: 2.8rem;
+}
+
+#add-new-post{
+    color: var(--color-primary);
+    cursor: pointer;
 }
 
 /* ............Start Feed Aria.......... */
@@ -643,6 +635,7 @@ aside .menu-item:nth-last-child(2){
     background: #000000ba; 
     display: none;  
     padding-top: 4rem;  
+    margin-left: .7rem;
 }
 .popup>div{
     display: flex;
@@ -660,6 +653,12 @@ aside .menu-item:nth-last-child(2){
     flex-direction: column;  
     box-shadow: var(--color-primary) 0 0 .3rem;
 }
+.notify-popup-box{
+    justify-content: start;
+    align-items: start;
+    text-align: left;
+}
+
 .profile-popup-box{
     width: 400px;
 }
@@ -754,7 +753,7 @@ aside .menu-item:nth-last-child(2){
     background: var(--color-secondary);
     align-items: center;
     margin: 0 1rem;
-    gap: 4rem;    
+    gap: 3rem;    
 }
 .choose-size span{
     width: 1rem;
@@ -851,7 +850,10 @@ aside .menu-item:nth-last-child(2){
 .liked{
     font-weight: bold !important;
     color: var(--color-danger);
-    transform: scale(1.2);
+}
+.booked{
+    font-weight: bold !important;
+    color: var(--color-primary);
 }
 .icon-bg{
     background: var(--color-dark);

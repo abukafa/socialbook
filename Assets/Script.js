@@ -9,14 +9,13 @@ let swiper = new Swiper(".mySwiper",{
 window.addEventListener('scroll',()=>{
     document.querySelector('.profile-popup').style.display='none'
     document.querySelector('.add-post-popup').style.display='none'
+    document.querySelector('.notify-popup').style.display='none'
     document.querySelector('.theme-customize').style.display='none'
-    document.querySelector('.notification-box').style.display='none'
 });
 
 
 // .......................Start Aside...................
 let menuItem = document.querySelectorAll('.menu-item');
-let notificationBox = document.querySelector('.notification-box');
 
 // Active remove..
 const removeActive = ()=>{
@@ -29,7 +28,6 @@ menuItem.forEach(item=>{
     item.addEventListener('click',()=>{
         removeActive();
         item.classList.add('active');
-        notificationBox.style.display='none'
     })
 });
 
@@ -43,7 +41,6 @@ let notificationMenu = document.querySelector('#Notify-box');
 let notfyCounter1 = document.querySelector('#ntCounter1');
 
 notificationMenu.addEventListener('click',()=>{
-    notificationBox.style.display='block'
     notfyCounter1.style.display='none'
 });
 
@@ -93,9 +90,11 @@ Dlete.forEach(deletee=>{
 let AllMyProfilePicture = document.querySelectorAll('#my-profile-picture');
 let profilePopup = document.querySelector('.profile-popup');
 let addPostPopup = document.querySelector('.add-post-popup');
+let notifyPopup = document.querySelector('.notify-popup');
 let themeCustomizePopup = document.querySelector('.theme-customize');
 let myProfilePictureImg = document.querySelectorAll('#my-profile-picture img');
 let ProfileUploader = document.querySelector('#profile-upload');
+let addNewPost = document.querySelector('#add-new-post');
 
 AllMyProfilePicture.forEach(AllProfile => {
     AllProfile.addEventListener('click',()=>{
@@ -103,10 +102,15 @@ AllMyProfilePicture.forEach(AllProfile => {
     })   
 });
 
+addNewPost.addEventListener('click',()=>{
+    addPostPopup.style.display='flex'
+});
+
 document.querySelectorAll('.close').forEach(AllCloser=>{
     AllCloser.addEventListener('click',()=>{
         profilePopup.style.display='none'
         addPostPopup.style.display='none'
+        notifyPopup.style.display='none'
         themeCustomizePopup.style.display='none'
     })
 });
@@ -132,6 +136,13 @@ document.querySelector('#feed-pic-upload').addEventListener('change',()=>{
 });
 
 
+//.................Start Notify Popup................
+let notifyBox = document.querySelector('#Notify-box');
+
+notifyBox.addEventListener('click',()=>{
+    notifyPopup.style.display='flex'
+});
+
 
 
 //.................Start Add story................
@@ -144,36 +155,17 @@ addStory.addEventListener('change',()=>{
 });
 
 
-
-
-
-// ................Mini Button input................
-let miniButton = document.querySelector('.mini-button');
-let inputPost = document.querySelector('.input-post');
-
-
-
-miniButton.addEventListener('click',()=>{
-    inputPost.classList.toggle('boxshadow1');
-    setTimeout(() => {
-        inputPost.classList.remove('boxshadow1');
-    }, 3000);
-});
-
-miniButton.addEventListener('dblclick',()=>{
-    addPostPopup.style.display='flex'
-});
-
-
-
-
-
-
 // ..............Liked button.............
 
 document.querySelectorAll('.action-button span:first-child i').forEach(liked=>{
     liked.addEventListener('click',()=>{
         liked.classList.toggle('liked');
+    })
+});
+
+document.querySelectorAll('.bookmark i').forEach(booked=>{
+    booked.addEventListener('click',()=>{
+        booked.classList.toggle('booked');
     })
 });
 
