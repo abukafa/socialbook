@@ -269,6 +269,11 @@ aside .menu-item:nth-last-child(2){
     width: 90%;
     margin: 0 auto;    
 }
+.instagram-container{
+    max-width: 500px !important;
+    width: 100%;
+    margin: 0 auto;    
+}
 .stories-wrappper{
     display: flex;
     gap: .5rem; 
@@ -680,6 +685,20 @@ aside .menu-item:nth-last-child(2){
     color: var(--color-gray);
     margin-left: .5rem;  
     margin-top: -.5rem; 
+}
+
+.profile-info{
+    padding-bottom: 3rem; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;  
+}
+.profile-info img{
+    max-height: 10rem;
+    border-radius: 50%;
+    margin-top: 2rem; 
 }
 
 /*.............. End Profile popup.............. */
